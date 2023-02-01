@@ -2,16 +2,25 @@ const connection = require('../database/connection')
 const express = require('express')
 const router = express.Router()
 const EmpresaController = require('../controllers/EmpresaController')
+const LicencaController = require('../controllers/LicencaController')
 
 router.post('/empresa/insert', EmpresaController.novaEmpresa)
 
 router.get('/empresas', EmpresaController.listarEmpresas)
 
-//router.get('/empresa/:id', EmpresaController.listarUmaEmpresa)
+router.put('/empresa/update/:id', EmpresaController.atualizarEmpresa)
 
-router.put('/atualizar/empresa/:id', EmpresaController.atualizarEmpresa)
+router.delete('/empresa/delete/:id', EmpresaController.removerEmpresa)
 
-router.delete('/deletar/empresa/:id', EmpresaController.deletarEmpresa)
+router.post('/licenca/insert', LicencaController.novaLicenca)
+
+router.get('/licencas', LicencaController.listarLicencas)
+
+router.put('/licenca/update/:id', LicencaController.atualizarLicenca)
+
+router.delete('/licenca/delete/:id', LicencaController.removerLicenca)
+
+
 
 
 

@@ -24,16 +24,6 @@ class EmpresaController {
         })
     }
 
-    /*listarUmaEmpresa(request,response){
-        const id = request.params
-
-        database.select("*").table("Empresa").where({id:id}).then(empresa=>{
-            response.json(empresa)
-
-        }).catch(error=>{
-            console.log(error)
-        })
-    }*/
 
     atualizarEmpresa(request,response){
         const id = request.params.id
@@ -46,11 +36,11 @@ class EmpresaController {
         })
     }
 
-    deletarEmpresa(request, response){
+    removerEmpresa(request, response){
         const id = request.params.id
 
         database.where({idEmpresa:id}).del().table("Empresa").then(data=>{
-            response.json({message: "empresa deletada com sucesso"})
+            response.json({message: "empresa removida com sucesso"})
         }).catch(error=>{
             response.json(error)
         })

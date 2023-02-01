@@ -1,13 +1,4 @@
-{
-	"RazaoSocial":"HortoPAY52",
-	"CNPJ":"78945612345618",
-	"CEP":"89010010",
-	"Cidade":"Natal",
-	"Estado":"RN",
-	"Bairro":"Fortaleza Alta",
-	"Complemento":"casa 23"
-	
-}
+CREATE SCHEMA NodeDesafio
 
 CREATE TABLE Empresa(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -20,3 +11,16 @@ CREATE TABLE Empresa(
   Complemento  VARCHAR(45)
   )
   ENGINE = InnoDB;
+
+  CREATE TABLE Licenca (
+  idLicenca INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  Empresa INT NOT NULL,
+  Numero VARCHAR(45) NOT NULL,
+  OrgaoAmbiental VARCHAR(45) NOT NULL,
+  Emissao DATE NOT NULL,
+  Validade DATE NOT NULL
+  )
+
+  ALTER TABLE Licenca
+  add foreign key (Empresa)
+  references Empresa(idEmpresa)

@@ -12,8 +12,8 @@ app.use(router)
 
 
 
-app.listen(4000,()=>{
-    console.log("aplicação rodando na porta 4000")
+app.listen(4001,()=>{
+    console.log("aplicação rodando na porta 4001")
 })
 
 app.get('/', (request, response)=>{
