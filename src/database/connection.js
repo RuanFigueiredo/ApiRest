@@ -7,6 +7,7 @@ var knex = require('knex')({
         database : 'DesafioNode'
      }
 });
+
 module.exports = knex
-//create schema DesafioNode para colocar no database.sql na raiz do projeto
+
 

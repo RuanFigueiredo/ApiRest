@@ -23,8 +23,40 @@ class EmpresaController {
             console.log(error)
         })
     }
-}
 
+    /*listarUmaEmpresa(request,response){
+        const id = request.params
+
+        database.select("*").table("Empresa").where({id:id}).then(empresa=>{
+            response.json(empresa)
+
+        }).catch(error=>{
+            console.log(error)
+        })
+    }*/
+
+    atualizarEmpresa(request,response){
+        const id = request.params.id
+        const {RazaoSocial} = request.body
+
+        database.where({idEmpresa:id}).update({RazaoSocial:RazaoSocial}).table("Empresa").then(data=>{
+            response.json({message:"empresa atualizada com sucesso"})
+        }).catch(error=>{
+            response.json(error)
+        })
+    }
+
+    deletarEmpresa(request, response){
+        const id = request.params.id
+
+        database.where({idEmpresa:id}).del().table("Empresa").then(data=>{
+            response.json({message: "empresa deletada com sucesso"})
+        }).catch(error=>{
+            response.json(error)
+        })
+    }
+
+}
 
 
 module.exports = new EmpresaController()
