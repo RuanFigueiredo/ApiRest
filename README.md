@@ -1,6 +1,4 @@
-
-  Ferramentas usadas:
-
+  ## Instalações:
   Express -> npm install express
   Nodemon -> npm install nodemon
   MySQL -> npm install mysql
@@ -8,14 +6,14 @@
   cors -> npm install cors
 
 
-  Para iniciar o servidor:
+  ## Para iniciar o servidor:
   npm start , port 4001
 
   Foi realizado um CRUD para Entidade Empresa e um para Entidade Licença
 
   Foi usado Insomnia para testar a api
 
-  Tecnologias e suas versões:
+  ## Tecnologias e suas versões:
 
   MySQL 8.0.31
   Node.JS 17.3.0
